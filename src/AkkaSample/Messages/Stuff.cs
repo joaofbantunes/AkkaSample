@@ -2,14 +2,8 @@
 
 namespace AkkaSample.Messages
 {
-    public class Stuff : IConsistentHashable
+    public class Stuff 
     {
-        public int HandlerId { get; set; }
         public string Text { get; set; }
-
-        public object ConsistentHashKey
-        {
-            get { return HandlerId; }
-        }
     }
 }
