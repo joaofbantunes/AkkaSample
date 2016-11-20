@@ -59,7 +59,7 @@ namespace AkkaSample
                 await ConsoleHelper.WriteAsync("Holding a bit more for actors to timeout.");
                 await Task.Delay(4000);
 
-                var secondBatchOfMessagesCount = 10;
+                var secondBatchOfMessagesCount = 20;
                 await ConsoleHelper.WriteAsync($"Sending second batch of {secondBatchOfMessagesCount} messages.");
 
                 for (var i = 0; i < secondBatchOfMessagesCount; ++i)
@@ -67,9 +67,9 @@ namespace AkkaSample
                     client1.TargetServer.Tell(new ShardEnvelope(i, new Stuff { Text = "Batch 2 - Message " + i }));
                 }
 
-                await Task.Delay(1000);
+                await Task.Delay(2000);
                 await ConsoleHelper.WriteAsync("Keeping GetInfo results organized in the log.");
-                var thirdBatchOfMessagesCount = 10;
+                var thirdBatchOfMessagesCount = 20;
                 ConsoleHelper.Write($"Sending {thirdBatchOfMessagesCount} get info messages.");
                 for (var i = 0; i < thirdBatchOfMessagesCount; ++i)
                 {
